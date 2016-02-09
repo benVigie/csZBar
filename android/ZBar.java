@@ -47,12 +47,6 @@ public class ZBar extends CordovaPlugin {
             }
             return true;
         }
-        else if(action.equals("cancelScan")) {
-            if (isInProgress) {
-                scanIntent.onBackPressed();
-            }
-            return true;
-        }
         else {
             return false;
         }

@@ -147,6 +147,14 @@ implements SurfaceHolder.Callback {
         findViewById(getResourceId("id/csZbarScannerSight")).bringToFront();
         scannerView.requestLayout();
         scannerView.invalidate();
+
+        // Auto stop after 8 seconds
+        new Handler().postDelayed(
+            new Runnable() {
+                public void run() {
+                    this.onBackPressed();
+                }
+        }, 8000);
     }
 
     @Override
