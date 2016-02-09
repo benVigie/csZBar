@@ -12,6 +12,7 @@ ZBar.prototype = {
         params = params || {};
         if(params.text_title === undefined) params.text_title = "Scan QR Code";
         if(params.text_instructions === undefined) params.text_instructions = "Please point your camera at the QR code.";
+        if(params.auto_close_delay === undefined) params.auto_close_delay = 30000;
         if(params.camera != "front") params.camera = "back";
         if(params.flash != "on" && params.flash != "off") params.flash = "auto";
 

@@ -63,6 +63,7 @@ implements SurfaceHolder.Callback {
     // Customisable stuff
     String whichCamera;
     String flashMode;
+    int     autoCloseDelay;
 
     // For retrieving R.* resources, from the actual app package
     // (we can't use actual.application.package.R.* in our code as we
@@ -95,6 +96,7 @@ implements SurfaceHolder.Callback {
         Boolean drawSight = params.optBoolean("drawSight", true);
         whichCamera = params.optString("camera");
         flashMode = params.optString("flash");
+        autoCloseDelay = params.optInt("auto_close_delay");
 
         // Initiate instance variables
         autoFocusHandler = new Handler();
@@ -148,14 +150,14 @@ implements SurfaceHolder.Callback {
         scannerView.requestLayout();
         scannerView.invalidate();
 
-        // Auto stop after 8 seconds
+        // Auto stop after some seconds
         new Handler().postDelayed(
             new Runnable() {
                 public void run() {
                     setResult(RESULT_CANCELED);
                     finish();
                 }
-        }, 8000);
+        }, autoCloseDelay);
     }
 
     @Override
