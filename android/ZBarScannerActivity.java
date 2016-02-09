@@ -153,6 +153,7 @@ implements SurfaceHolder.Callback {
             new Runnable() {
                 public void run() {
                     setResult(RESULT_CANCELED);
+                    finish();
                 }
         }, 8000);
     }
