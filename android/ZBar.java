@@ -23,7 +23,7 @@ public class ZBar extends CordovaPlugin {
 
     private boolean isInProgress = false;
     private CallbackContext scanCallbackContext;
-    private Intent scanIntent
+    private Intent scanIntent;
 
 
     // Plugin API ------------------------------------------------------
