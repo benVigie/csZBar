@@ -152,7 +152,7 @@ implements SurfaceHolder.Callback {
         new Handler().postDelayed(
             new Runnable() {
                 public void run() {
-                    this.onBackPressed();
+                    setResult(RESULT_CANCELED);
                 }
         }, 8000);
     }
